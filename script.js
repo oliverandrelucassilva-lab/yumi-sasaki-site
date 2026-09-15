@@ -109,23 +109,20 @@
   var toothGroup = document.getElementById("tooth3dGroup");
   if (!tooth || !toothGroup) return;
 
-  var rotX = -10;
-  var rotY = 0;
+  var rotY = -18;
   var lastX = 0;
-  var lastY = 0;
   var dragging = false;
 
   function stopAutoSpin() {
     if (toothGroup.style.animation !== "none") {
       toothGroup.style.animation = "none";
-      toothGroup.style.transform = "rotateX(" + rotX + "deg) rotateY(" + rotY + "deg)";
+      toothGroup.style.transform = "rotateY(" + rotY + "deg)";
     }
   }
 
   tooth.addEventListener("pointerdown", function (event) {
     dragging = true;
     lastX = event.clientX;
-    lastY = event.clientY;
     tooth.setPointerCapture(event.pointerId);
     stopAutoSpin();
   });
@@ -133,12 +130,9 @@
   tooth.addEventListener("pointermove", function (event) {
     if (!dragging) return;
     var dx = event.clientX - lastX;
-    var dy = event.clientY - lastY;
     lastX = event.clientX;
-    lastY = event.clientY;
-    rotY += dx * 0.5;
-    rotX = Math.max(-70, Math.min(70, rotX - dy * 0.4));
-    toothGroup.style.transform = "rotateX(" + rotX + "deg) rotateY(" + rotY + "deg)";
+    rotY += dx * 0.6;
+    toothGroup.style.transform = "rotateY(" + rotY + "deg)";
   });
 
   ["pointerup", "pointercancel", "pointerleave"].forEach(function (evt) {
