@@ -102,3 +102,79 @@
     }, { passive: true });
   }
 })();
+
+// ---- interactive 3D tooth (drag to rotate) ----
+(function () {
+  var tooth = document.getElementById("tooth3d");
+  var toothGroup = document.getElementById("tooth3dGroup");
+  if (!tooth || !toothGroup) return;
+
+  var rotX = -10;
+  var rotY = 0;
+  var lastX = 0;
+  var lastY = 0;
+  var dragging = false;
+
+  function stopAutoSpin() {
+    if (toothGroup.style.animation !== "none") {
+      toothGroup.style.animation = "none";
+      toothGroup.style.transform = "rotateX(" + rotX + "deg) rotateY(" + rotY + "deg)";
+    }
+  }
+
+  tooth.addEventListener("pointerdown", function (event) {
+    dragging = true;
+    lastX = event.clientX;
+    lastY = event.clientY;
+    tooth.setPointerCapture(event.pointerId);
+    stopAutoSpin();
+  });
+
+  tooth.addEventListener("pointermove", function (event) {
+    if (!dragging) return;
+    var dx = event.clientX - lastX;
+    var dy = event.clientY - lastY;
+    lastX = event.clientX;
+    lastY = event.clientY;
+    rotY += dx * 0.5;
+    rotX = Math.max(-70, Math.min(70, rotX - dy * 0.4));
+    toothGroup.style.transform = "rotateX(" + rotX + "deg) rotateY(" + rotY + "deg)";
+  });
+
+  ["pointerup", "pointercancel", "pointerleave"].forEach(function (evt) {
+    tooth.addEventListener(evt, function () {
+      dragging = false;
+    });
+  });
+})();
+
+// ---- scroll-reveal for section headings, cards and photos ----
+(function () {
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion || !("IntersectionObserver" in window)) return;
+
+  var targets = document.querySelectorAll(
+    ".section-head, .specialty-card, .about-body, .clinic-body, .location-card, .results-gallery figure"
+  );
+  if (!targets.length) return;
+
+  targets.forEach(function (el) {
+    el.classList.add("reveal");
+  });
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+  );
+
+  targets.forEach(function (el) {
+    observer.observe(el);
+  });
+})();
