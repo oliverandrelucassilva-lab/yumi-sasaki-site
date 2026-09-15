@@ -15,8 +15,8 @@
   --white: #ffffff;
   --line: #e7d9c2;
 
-  --font-display: "Playfair Display", "Iowan Old Style", Georgia, serif;
-  --font-body: "Jost", "Century Gothic", Futura, sans-serif;
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Manrope", "Century Gothic", Futura, sans-serif;
 
   --shadow-soft: 0 24px 48px -28px rgba(43, 36, 32, 0.35);
   --radius-lg: 28px;
@@ -73,8 +73,9 @@ a {
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.12;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
   text-wrap: balance;
   margin: 0;
   color: var(--ink);
@@ -258,7 +259,9 @@ p {
 }
 
 .hero-copy h1 {
-  font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+  font-size: clamp(2.7rem, 5.2vw, 4.4rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .hero-copy h1 em {
@@ -490,7 +493,9 @@ section {
 }
 
 .section-head h2 {
-  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  font-size: clamp(2.1rem, 3.6vw, 2.9rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .section-head p {
@@ -998,7 +1003,7 @@ section {
 }
 
 .clinic-body h2 {
-  font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
   margin-top: 12px;
 }
 
@@ -1120,7 +1125,7 @@ section {
 
 .cta-banner h2 {
   color: var(--white);
-  font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+  font-size: clamp(2rem, 3.8vw, 2.7rem);
 }
 
 .cta-banner p {
