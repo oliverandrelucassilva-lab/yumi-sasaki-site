@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dra. Yumi Sasaki — Odontologia Estética</title>
-  <meta name="description" content="Odontologia estética em Euclides da Cunha, BA: lentes de contato dental, Invisalign, clareamento, prótese e odontologia digital com a Dra. Yumi Sasaki." />
+  <meta name="description" content="Odontologia estética em Euclides da Cunha, BA: lentes de contato dental, Invisalign, clareamento, prótese, resina, toxina botulínica e odontologia digital com a Dra. Yumi Sasaki." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -15,7 +15,7 @@
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="#topo">
-        <span class="brand-mark">YS</span>
+        <span class="brand-mark"><img src="images/logo.jpg" alt="Yumi Sasaki" /></span>
         <span class="brand-word">Yumi Sasaki<span>Odontologia Estética</span></span>
       </a>
       <nav class="main-nav" aria-label="Navegação principal">
@@ -150,12 +150,43 @@
 
           <div class="specialty-card">
             <span class="specialty-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2c3 4 6 8.5 6 12a6 6 0 0 1-12 0c0-3.5 3-8 6-12Z" /></svg>
+            </span>
+            <h3>Facetas em Resina</h3>
+            <p>Restaurações estéticas em resina composta, corrigindo forma e cor do sorriso com técnica conservadora.</p>
+          </div>
+
+          <div class="specialty-card">
+            <span class="specialty-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 2h6M10 2v5.5L6 13a4 4 0 0 0 3 6.5h6a4 4 0 0 0 3-6.5l-4-5.5V2" /><path d="M8.5 16h7" /></svg>
+            </span>
+            <h3>Toxina Botulínica</h3>
+            <p>Harmonização orofacial que suaviza a expressão do sorriso, complementando o resultado estético.</p>
+          </div>
+
+          <div class="specialty-card">
+            <span class="specialty-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="13" rx="2" /><path d="M8 21h8M12 17v4" /></svg>
             </span>
             <h3>Odontologia Digital</h3>
             <p>Escaneamento intraoral e planejamento 3D do sorriso (Digital Smile Design) antes de qualquer procedimento.</p>
           </div>
 
+        </div>
+
+        <div class="digital-flow">
+          <div class="digital-flow-photo tilt-card">
+            <img src="images/digital-flow.jpg" alt="Moldagens digitais impressas em 3D no consultório" />
+          </div>
+          <div class="digital-flow-body">
+            <span class="eyebrow">Fluxo Digital</span>
+            <h3>Da moldagem virtual à peça em suas mãos</h3>
+            <p>
+              Cada sorriso é planejado em tela antes de qualquer procedimento
+              — escaneamento intraoral, simulação digital e prototipagem de
+              precisão, para um resultado previsível do início ao fim.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -165,21 +196,21 @@
       <div class="wrap">
         <div class="section-head center">
           <span class="eyebrow">Antes &amp; Depois</span>
-          <h2>Veja a transformação de um clareamento</h2>
-          <p>Arraste o ponto dourado para revelar o resultado.</p>
+          <h2>Veja a transformação de perto</h2>
+          <p>Lentes de contato dental em porcelana — arraste o ponto dourado para revelar o resultado.</p>
         </div>
 
         <div class="ba-slider" id="baSlider">
           <div class="ba-panel before">
             <span class="ba-label">Antes</span>
-            <img src="images/ba-before.jpg" alt="Sorriso antes do clareamento e das lentes de contato dental" draggable="false" />
+            <img src="images/ba-before.jpg" alt="Sorriso antes das lentes de contato dental em porcelana" draggable="false" />
           </div>
           <div class="ba-panel after">
             <span class="ba-label">Depois</span>
-            <img src="images/ba-after.jpg" alt="Sorriso depois do clareamento e das lentes de contato dental" draggable="false" />
+            <img src="images/ba-after.jpg" alt="Sorriso depois das lentes de contato dental em porcelana" draggable="false" />
           </div>
           <div class="ba-divider" aria-hidden="true"></div>
-          <div class="ba-handle" role="slider" tabindex="0" aria-label="Comparar antes e depois do clareamento" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+          <div class="ba-handle" role="slider" tabindex="0" aria-label="Comparar antes e depois das lentes de contato dental" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6L2 12l6 6M16 6l6 6-6 6" /></svg>
           </div>
         </div>
@@ -202,8 +233,13 @@
     <!-- ============================== ESPAÇO ============================== -->
     <section id="espaco" class="clinic">
       <div class="wrap">
-        <div class="clinic-photo tilt-card">
-          <img src="images/clinic.jpg" alt="Recepção do consultório da Dra. Yumi Sasaki" />
+        <div class="clinic-collage">
+          <div class="clinic-photo tilt-card">
+            <img src="images/clinic.jpg" alt="Recepção do consultório da Dra. Yumi Sasaki" />
+          </div>
+          <div class="clinic-photo-accent tilt-card">
+            <img src="images/action.jpg" alt="Dra. Yumi Sasaki durante atendimento" />
+          </div>
         </div>
         <div class="clinic-body">
           <span class="eyebrow">Nosso Espaço</span>
@@ -289,7 +325,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a class="brand" href="#topo">
-            <span class="brand-mark">YS</span>
+            <span class="brand-mark"><img src="images/logo.jpg" alt="Yumi Sasaki" /></span>
             <span class="brand-word">Yumi Sasaki<span>Odontologia Estética</span></span>
           </a>
           <p>Odontologia estética e digital em Euclides da Cunha, BA. Cuidado técnico com sensibilidade artística, em cada sorriso.</p>
