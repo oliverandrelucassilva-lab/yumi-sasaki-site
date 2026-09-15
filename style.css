@@ -394,6 +394,50 @@ p {
   }
 }
 
+@media (max-width: 640px) {
+  .hero {
+    padding-block: 40px 48px;
+  }
+  .hero .wrap {
+    gap: 28px;
+  }
+  .hero-copy {
+    gap: 16px;
+  }
+  .hero-copy h1 {
+    font-size: 1.9rem;
+  }
+  .hero-copy p.lead {
+    font-size: 0.94rem;
+  }
+  .hero-actions .btn {
+    padding: 0.8em 1.4em;
+    font-size: 0.88rem;
+  }
+  .hero-visual-wrap {
+    order: 0;
+    width: 100%;
+    max-width: 230px;
+    margin-inline: auto;
+  }
+  .hero-visual {
+    aspect-ratio: 4 / 5;
+  }
+  .hero-visual-caption {
+    font-size: 0.92rem;
+    left: 18px;
+    bottom: 16px;
+  }
+  .hero-ring-1 {
+    width: 80px;
+    height: 80px;
+  }
+  .hero-ring-2 {
+    width: 48px;
+    height: 48px;
+  }
+}
+
 /* ---- 3D tilt cards (hero portrait, about portrait, clinic photo) ---- */
 
 .tilt-card {
@@ -458,6 +502,22 @@ section {
   margin-inline: auto;
   text-align: center;
   align-items: center;
+}
+
+@media (max-width: 640px) {
+  section {
+    padding-block: 52px;
+  }
+  .section-head {
+    margin-bottom: 32px;
+    gap: 10px;
+  }
+  .section-head h2 {
+    font-size: 1.55rem;
+  }
+  .section-head p {
+    font-size: 0.92rem;
+  }
 }
 
 /* ----------------------------------- sobre ----------------------------------- */
@@ -538,12 +598,15 @@ section {
 /* ----------------------------------- especialidades ----------------------------------- */
 
 .specialties-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 22px;
 }
 
 .specialty-card {
+  flex: 0 1 calc(25% - 16.5px);
+  min-width: 220px;
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
@@ -580,20 +643,23 @@ section {
 }
 
 @media (max-width: 1100px) {
-  .specialties-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .specialty-card {
+    flex-basis: calc(33.333% - 14.667px);
   }
 }
 
 @media (max-width: 780px) {
-  .specialties-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .specialty-card {
+    flex-basis: calc(50% - 11px);
+    min-width: 180px;
   }
 }
 
 @media (max-width: 480px) {
-  .specialties-grid {
-    grid-template-columns: 1fr;
+  .specialty-card {
+    flex-basis: 100%;
+    min-width: 0;
+    padding: 22px 20px;
   }
 }
 
@@ -715,6 +781,20 @@ section {
   }
   .digital-flow-body p {
     margin-inline: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .digital-flow {
+    padding: 22px;
+    margin-top: 36px;
+  }
+  .tooth3d-stage {
+    transform: scale(0.82);
+    margin-block: -22px;
+  }
+  .digital-flow-body h3 {
+    font-size: 1.2rem;
   }
 }
 
@@ -929,6 +1009,9 @@ section {
     bottom: -24px;
     width: 48%;
   }
+  .clinic-collage {
+    max-width: 240px;
+  }
 }
 
 .clinic-body p {
@@ -966,6 +1049,12 @@ section {
   border-radius: var(--radius-lg);
   padding: 40px;
   box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 640px) {
+  .location-card {
+    padding: 26px 24px;
+  }
 }
 
 .location-item {
@@ -1173,6 +1262,14 @@ section {
   }
   .about .wrap {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-portrait {
+    width: 100%;
+    max-width: 240px;
+    margin-inline: auto;
   }
 }
 
