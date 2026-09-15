@@ -289,51 +289,116 @@ p {
   font-weight: 600;
 }
 
+.hero-visual-wrap {
+  position: relative;
+}
+
+.hero-ring {
+  position: absolute;
+  border: 1px solid var(--gold-light);
+  border-radius: 50%;
+  opacity: 0.55;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.hero-ring-1 {
+  width: 120px;
+  height: 120px;
+  top: -34px;
+  right: -28px;
+}
+
+.hero-ring-2 {
+  width: 70px;
+  height: 70px;
+  bottom: 12%;
+  left: -30px;
+  border-color: var(--gold);
+  opacity: 0.4;
+}
+
 .hero-visual {
   position: relative;
   aspect-ratio: 4 / 5;
   border-radius: var(--radius-lg);
-  background: linear-gradient(160deg, var(--nude-200), var(--nude-100) 60%, var(--white));
+  overflow: hidden;
   box-shadow: var(--shadow-soft);
-  display: grid;
-  place-items: center;
   isolation: isolate;
 }
 
 .hero-visual::before {
   content: "";
   position: absolute;
-  inset: 18px;
-  border: 1px solid var(--gold-light);
-  border-radius: calc(var(--radius-lg) - 10px);
-  opacity: 0.6;
+  inset: 14px;
+  border: 1px solid rgba(251, 247, 241, 0.55);
+  border-radius: calc(var(--radius-lg) - 8px);
+  z-index: 2;
+  pointer-events: none;
 }
 
-.hero-visual .placeholder-note {
+.hero-visual img {
   position: absolute;
-  bottom: 22px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  background: rgba(255, 255, 255, 0.75);
-  padding: 6px 14px;
-  border-radius: 999px;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
 }
 
-.hero-visual svg {
-  width: 58%;
+.hero-visual-caption {
+  position: absolute;
+  left: 26px;
+  bottom: 24px;
+  z-index: 3;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.3;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+}
+
+.hero-visual-caption span {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* subtle gradient so the caption stays legible over any photo */
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(20, 16, 13, 0.55), transparent 42%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 @media (max-width: 940px) {
   .hero .wrap {
     grid-template-columns: 1fr;
   }
-  .hero-visual {
+  .hero-visual-wrap {
     order: -1;
+  }
+  .hero-visual {
     aspect-ratio: 5 / 4;
+  }
+}
+
+/* ---- 3D tilt cards (hero portrait, about portrait, clinic photo) ---- */
+
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tilt-card {
+    transition: none;
   }
 }
 
@@ -381,22 +446,25 @@ section {
 
 .about-portrait {
   position: relative;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   border-radius: var(--radius-lg);
-  background: linear-gradient(200deg, var(--white), var(--nude-200));
+  overflow: hidden;
   box-shadow: var(--shadow-soft);
-  display: grid;
-  place-items: center;
   border: 1px solid var(--line);
 }
 
-.about-portrait svg {
-  width: 44%;
-  opacity: 0.85;
+.about-portrait img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
 }
 
 .about-portrait .tag {
   position: absolute;
+  z-index: 2;
   top: 20px;
   left: 20px;
   background: var(--white);
@@ -533,32 +601,30 @@ section {
 .ba-panel {
   position: absolute;
   inset: 0;
-  display: grid;
-  place-items: center;
+  background: #241e1a;
 }
 
-.ba-panel.after {
-  background: linear-gradient(160deg, #3a322c, #241e1a);
-}
-
-.ba-panel.before {
-  background: linear-gradient(160deg, #4a4038, #2b2420);
-}
-
-.ba-panel svg {
-  width: 62%;
+.ba-panel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
 }
 
 .ba-label {
   position: absolute;
+  z-index: 2;
   top: 18px;
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 7px 14px;
   border-radius: 999px;
-  background: rgba(251, 247, 241, 0.12);
-  border: 1px solid rgba(251, 247, 241, 0.25);
+  background: rgba(20, 16, 13, 0.55);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(251, 247, 241, 0.3);
   color: var(--nude-50);
 }
 
@@ -608,11 +674,93 @@ section {
   color: #cdbfae;
 }
 
-.ba-note {
-  text-align: center;
-  margin-top: 8px;
-  font-size: 0.78rem;
-  color: #8b7c6c;
+.results-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 760px;
+  margin: 40px auto 0;
+}
+
+.results-gallery figure {
+  margin: 0;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(216, 189, 143, 0.3);
+}
+
+.results-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  transition: transform 0.5s ease;
+}
+
+.results-gallery figure:hover img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 640px) {
+  .results-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+
+/* ----------------------------------- espaço / clínica ----------------------------------- */
+
+.clinic {
+  background: var(--nude-100);
+}
+
+.clinic .wrap {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.clinic-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--line);
+  max-width: 380px;
+  margin-inline: auto;
+}
+
+.clinic-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.clinic-body p {
+  color: var(--ink-soft);
+  max-width: 52ch;
+  margin-top: 16px;
+}
+
+.clinic-body h2 {
+  font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+  margin-top: 12px;
+}
+
+@media (max-width: 860px) {
+  .clinic .wrap {
+    grid-template-columns: 1fr;
+  }
+  .clinic-photo {
+    order: -1;
+  }
 }
 
 /* ----------------------------------- localização ----------------------------------- */
@@ -880,5 +1028,13 @@ section {
   }
   .wa-float {
     padding: 14px;
+  }
+  .header-cta .btn-gold {
+    padding: 0.7em 1.1em;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+  .brand-word {
+    font-size: 1rem;
   }
 }

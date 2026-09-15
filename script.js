@@ -57,3 +57,48 @@
 
   setPosition(50);
 })();
+
+// ---- 3D tilt on portrait cards + gentle parallax rings ----
+(function () {
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) return;
+
+  var tiltCards = document.querySelectorAll(".tilt-card");
+  tiltCards.forEach(function (card) {
+    var maxTilt = 8;
+
+    function onMove(event) {
+      var rect = card.getBoundingClientRect();
+      var x = (event.clientX - rect.left) / rect.width - 0.5;
+      var y = (event.clientY - rect.top) / rect.height - 0.5;
+      var rotY = x * maxTilt * 2;
+      var rotX = y * -maxTilt * 2;
+      card.style.transform =
+        "perspective(1000px) rotateX(" + rotX.toFixed(2) + "deg) rotateY(" + rotY.toFixed(2) + "deg) scale3d(1.02, 1.02, 1.02)";
+    }
+
+    function onLeave() {
+      card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+    }
+
+    card.addEventListener("pointermove", onMove);
+    card.addEventListener("pointerleave", onLeave);
+  });
+
+  var rings = document.querySelectorAll(".hero-ring");
+  if (rings.length) {
+    var ticking = false;
+    window.addEventListener("scroll", function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        var y = window.scrollY;
+        rings.forEach(function (ring, i) {
+          var speed = i % 2 === 0 ? 0.06 : -0.09;
+          ring.style.transform = "translateY(" + (y * speed).toFixed(1) + "px)";
+        });
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+})();
