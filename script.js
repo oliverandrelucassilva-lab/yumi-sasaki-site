@@ -9,7 +9,7 @@
 
   function setPosition(percent) {
     var clamped = Math.min(100, Math.max(0, percent));
-    afterPanel.style.clipPath = "inset(0 0 0 " + clamped + "%)";
+    afterPanel.style.clipPath = "inset(0 " + (100 - clamped) + "% 0 0)";
     divider.style.left = clamped + "%";
     handle.style.left = clamped + "%";
     handle.setAttribute("aria-valuenow", Math.round(clamped));
