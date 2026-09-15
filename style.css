@@ -808,7 +808,7 @@ section {
   position: relative;
   max-width: 620px;
   margin: 0 auto;
-  aspect-ratio: 900 / 217;
+  aspect-ratio: 900 / 260;
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-soft);
