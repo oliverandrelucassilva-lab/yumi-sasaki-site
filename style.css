@@ -47,9 +47,7 @@ html {
   #transformacao,
   #espaco,
   #localizacao {
-    min-height: calc(100vh - 96px);
-    display: flex;
-    align-items: flex-start;
+    min-height: 820px;
   }
 }
 
