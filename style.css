@@ -331,6 +331,26 @@ p {
   color: var(--ink);
 }
 
+.hero-portrait-frame {
+  position: absolute;
+  z-index: 1;
+  right: 6%;
+  top: 130px;
+  width: 300px;
+  aspect-ratio: 3 / 4;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 6px solid rgba(255, 255, 255, 0.92);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+}
+
+.hero-portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
 .hero-float-card {
   position: absolute;
   z-index: 2;
@@ -418,6 +438,9 @@ p {
   .hero-actions .btn {
     padding: 0.8em 1.4em;
     font-size: 0.88rem;
+  }
+  .hero-portrait-frame {
+    display: none;
   }
   .hero-float-card {
     right: 50%;
