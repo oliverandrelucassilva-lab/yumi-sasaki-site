@@ -84,23 +84,6 @@
     card.addEventListener("pointermove", onMove);
     card.addEventListener("pointerleave", onLeave);
   });
-
-  var rings = document.querySelectorAll(".hero-ring");
-  if (rings.length) {
-    var ticking = false;
-    window.addEventListener("scroll", function () {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(function () {
-        var y = window.scrollY;
-        rings.forEach(function (ring, i) {
-          var speed = i % 2 === 0 ? 0.06 : -0.09;
-          ring.style.transform = "translateY(" + (y * speed).toFixed(1) + "px)";
-        });
-        ticking = false;
-      });
-    }, { passive: true });
-  }
 })();
 
 
