@@ -49,7 +49,7 @@ html {
   #localizacao {
     min-height: calc(100vh - 96px);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
   }
 }
 
@@ -1058,27 +1058,17 @@ section {
   position: relative;
   aspect-ratio: 4 / 3.4;
   border-radius: var(--radius-lg);
-  background:
-    radial-gradient(circle at 32% 38%, rgba(169, 137, 90, 0.28), transparent 42%),
-    linear-gradient(160deg, var(--nude-200), var(--nude-100));
   border: 1px solid var(--line);
   overflow: hidden;
 }
 
-.map-visual svg {
+.map-visual iframe {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-}
-
-.map-pin {
-  position: absolute;
-  top: 34%;
-  left: 30%;
-  transform: translate(-50%, -100%);
-  color: var(--gold-deep);
-  filter: drop-shadow(0 8px 10px rgba(43, 36, 32, 0.25));
+  border: 0;
+  filter: grayscale(0.15) sepia(0.08);
 }
 
 @media (max-width: 860px) {
