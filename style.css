@@ -527,12 +527,16 @@ section {
 }
 
 @media (max-width: 640px) {
+  :root {
+    --radius-lg: 20px;
+    --radius-md: 14px;
+  }
   section {
-    padding-block: 52px;
+    padding-block: 40px;
   }
   .section-head {
-    margin-bottom: 32px;
-    gap: 10px;
+    margin-bottom: 24px;
+    gap: 8px;
   }
   .section-head h2 {
     font-size: 1.55rem;
@@ -677,11 +681,18 @@ section {
   }
 }
 
+@media (max-width: 640px) {
+  .specialties-grid {
+    gap: 14px;
+  }
+}
+
 @media (max-width: 480px) {
   .specialty-card {
     flex-basis: 100%;
     min-width: 0;
-    padding: 22px 20px;
+    padding: 20px 18px;
+    gap: 10px;
   }
 }
 
@@ -745,14 +756,19 @@ section {
 
 @media (max-width: 480px) {
   .digital-flow {
-    padding: 22px;
-    margin-top: 36px;
+    padding: 20px;
+    margin-top: 28px;
+    gap: 28px;
   }
   .tooth3d-stage {
     max-width: 240px;
   }
   .digital-flow-body h3 {
     font-size: 1.2rem;
+    margin-top: 6px;
+  }
+  .digital-flow-body p {
+    margin-top: 10px;
   }
 }
 
@@ -883,6 +899,11 @@ section {
   .results-gallery {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    margin-top: 24px;
+  }
+  .ba-hint {
+    margin-top: 12px;
+    font-size: 0.8rem;
   }
 }
 
@@ -988,7 +1009,11 @@ section {
 
 @media (max-width: 640px) {
   .location-card {
-    padding: 26px 24px;
+    padding: 22px 20px;
+  }
+  .location-item {
+    padding-block: 12px;
+    gap: 12px;
   }
 }
 
@@ -1193,10 +1218,28 @@ section {
 @media (max-width: 780px) {
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 32px;
   }
   .about .wrap {
     grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-footer {
+    padding-block: 44px 24px;
+  }
+  .footer-bottom {
+    margin-top: 32px;
+    padding-top: 18px;
+  }
+  .about-body p {
+    margin-bottom: 12px;
+  }
+  .credentials {
+    margin-top: 20px;
+    gap: 10px;
   }
 }
 
