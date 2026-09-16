@@ -334,21 +334,16 @@ p {
 .hero-portrait-frame {
   position: absolute;
   z-index: 1;
-  right: 6%;
-  top: 130px;
-  width: 300px;
-  aspect-ratio: 3 / 4;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 6px solid rgba(255, 255, 255, 0.92);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  right: 4%;
+  top: 90px;
+  width: 380px;
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.4));
 }
 
 .hero-portrait-frame img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
 }
 
 .hero-float-card {
