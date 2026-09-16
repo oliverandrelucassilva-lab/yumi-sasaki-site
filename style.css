@@ -976,6 +976,25 @@ section {
   margin-top: 16px;
 }
 
+.clinic-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 0;
+}
+
+.clinic-tags li {
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--gold-deep);
+  background: var(--white);
+  border: 1px solid var(--gold-light);
+  border-radius: 999px;
+  padding: 7px 16px;
+}
+
 .clinic-body h2 {
   font-size: clamp(1.9rem, 3vw, 2.5rem);
   margin-top: 12px;
