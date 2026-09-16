@@ -51,6 +51,10 @@ html {
     display: flex;
     align-items: center;
   }
+
+  #especialidades {
+    padding-top: 72px;
+  }
 }
 
 body {
