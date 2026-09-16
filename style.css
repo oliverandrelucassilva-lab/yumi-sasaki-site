@@ -789,15 +789,15 @@ section {
 }
 
 .ba-panel.before .ba-label {
-  right: 12px;
-}
-
-.ba-panel.after .ba-label {
   left: 12px;
 }
 
+.ba-panel.after .ba-label {
+  right: 12px;
+}
+
 .ba-panel.after {
-  clip-path: inset(0 50% 0 0);
+  clip-path: inset(0 0 0 50%);
 }
 
 .ba-divider {
