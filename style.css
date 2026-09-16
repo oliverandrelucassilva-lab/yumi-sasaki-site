@@ -309,8 +309,10 @@ p {
 
 .hero-copy p.lead {
   max-width: 46ch;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.96);
   font-size: 1.05rem;
+  font-weight: 500;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
 }
 
 .hero-actions {
