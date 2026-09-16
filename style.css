@@ -41,6 +41,18 @@ html {
   scroll-margin-top: 96px;
 }
 
+@media (min-width: 761px) {
+  #sobre,
+  #especialidades,
+  #transformacao,
+  #espaco,
+  #localizacao {
+    min-height: calc(100vh - 96px);
+    display: flex;
+    align-items: center;
+  }
+}
+
 body {
   margin: 0;
   background: var(--nude-50);
