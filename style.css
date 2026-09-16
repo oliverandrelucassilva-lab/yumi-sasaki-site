@@ -481,7 +481,7 @@ p {
 /* ----------------------------------- sections ----------------------------------- */
 
 section {
-  padding-block: 88px;
+  padding-block: 40px 88px;
 }
 
 .section-head {
