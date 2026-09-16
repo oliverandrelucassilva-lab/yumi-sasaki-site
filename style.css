@@ -33,6 +33,14 @@ html {
   scroll-behavior: smooth;
 }
 
+#sobre,
+#especialidades,
+#transformacao,
+#espaco,
+#localizacao {
+  scroll-margin-top: 96px;
+}
+
 body {
   margin: 0;
   background: var(--nude-50);
