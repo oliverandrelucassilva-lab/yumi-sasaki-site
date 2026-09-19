@@ -648,9 +648,12 @@ section {
   flex-wrap: wrap;
   justify-content: center;
   gap: 22px;
+  counter-reset: specialty;
 }
 
 .specialty-card {
+  position: relative;
+  counter-increment: specialty;
   flex: 0 1 calc(25% - 16.5px);
   min-width: 220px;
   background: var(--white);
@@ -661,6 +664,17 @@ section {
   flex-direction: column;
   gap: 14px;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.specialty-card::before {
+  content: "0" counter(specialty);
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--nude-200);
 }
 
 .specialty-card:hover {
@@ -709,10 +723,25 @@ section {
 
 @media (max-width: 480px) {
   .specialty-card {
-    flex-basis: 100%;
+    flex-basis: calc(50% - 7px);
     min-width: 0;
-    padding: 20px 18px;
-    gap: 10px;
+    padding: 18px 14px;
+    gap: 8px;
+  }
+  .specialty-card h3 {
+    font-size: 0.98rem;
+  }
+  .specialty-card p {
+    font-size: 0.82rem;
+  }
+  .specialty-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .specialty-card::before {
+    font-size: 1.2rem;
+    top: 12px;
+    right: 12px;
   }
 }
 
