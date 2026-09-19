@@ -366,6 +366,37 @@ p {
   filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.4));
 }
 
+@media (max-width: 1439px) {
+  .hero-portrait-frame {
+    width: 620px;
+  }
+  .hero-copy {
+    max-width: 480px;
+    gap: 16px;
+  }
+  .hero-copy h1 {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+  }
+  .hero-inner {
+    padding-block: 56px 84px;
+  }
+  .hero-float-card {
+    bottom: 90px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .hero-portrait-frame {
+    width: 460px;
+  }
+  .hero-copy {
+    max-width: 400px;
+  }
+  .hero-float-card {
+    right: 4%;
+  }
+}
+
 .hero-portrait-frame img {
   display: block;
   width: 100%;
