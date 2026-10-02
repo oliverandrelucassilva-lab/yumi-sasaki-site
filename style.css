@@ -667,7 +667,7 @@ section {
 }
 
 .specialty-card::before {
-  content: "0" counter(specialty);
+  content: counter(specialty, decimal-leading-zero);
   position: absolute;
   top: 16px;
   right: 18px;
