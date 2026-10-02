@@ -9,7 +9,14 @@
 
   function setPosition(percent) {
     var clamped = Math.min(100, Math.max(0, percent));
-    afterPanel.style.clipPath = "inset(0 0 0 " + clamped + "%)";
+    var mask =
+      "linear-gradient(to right, transparent 0%, transparent calc(" +
+      clamped +
+      "% - 5px), black calc(" +
+      clamped +
+      "% + 5px), black 100%)";
+    afterPanel.style.webkitMaskImage = mask;
+    afterPanel.style.maskImage = mask;
     divider.style.left = clamped + "%";
     handle.style.left = clamped + "%";
     handle.setAttribute("aria-valuenow", Math.round(clamped));
