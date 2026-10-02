@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://yumi-sasaki-site.vercel.app/sitemap.xml

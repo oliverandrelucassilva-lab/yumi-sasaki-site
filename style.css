@@ -191,6 +191,12 @@ p {
   text-decoration: none;
 }
 
+.brand-full img {
+  display: block;
+  height: 38px;
+  width: auto;
+}
+
 .brand-mark {
   width: 42px;
   height: 42px;
