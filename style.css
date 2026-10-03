@@ -144,7 +144,8 @@ p {
 }
 
 .btn-gold {
-  background: linear-gradient(135deg, var(--gold-light), var(--gold-deep));
+  background: linear-gradient(90deg, var(--gold-light), var(--gold-deep));
+  border-color: var(--gold-deep);
   color: var(--white);
   box-shadow: 0 14px 30px -14px rgba(138, 109, 67, 0.6);
 }
