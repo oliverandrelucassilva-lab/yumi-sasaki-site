@@ -68,7 +68,8 @@
 // ---- 3D tilt on portrait cards + gentle parallax rings ----
 (function () {
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduceMotion) return;
+  var canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (reduceMotion || !canHover) return;
 
   var tiltCards = document.querySelectorAll(".tilt-card");
   tiltCards.forEach(function (card) {
