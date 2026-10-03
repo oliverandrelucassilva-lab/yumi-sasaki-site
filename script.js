@@ -3,7 +3,6 @@
   if (!slider) return;
 
   var afterPanel = slider.querySelector(".ba-panel.after");
-  var beforeLabel = slider.querySelector(".ba-panel.before .ba-label");
   var divider = slider.querySelector(".ba-divider");
   var handle = slider.querySelector(".ba-handle");
   var dragging = false;
@@ -18,16 +17,6 @@
       "% + 5px), black 100%)";
     afterPanel.style.webkitMaskImage = mask;
     afterPanel.style.maskImage = mask;
-
-    var beforeLabelMask =
-      "linear-gradient(to right, black 0%, black calc(" +
-      clamped +
-      "% - 5px), transparent calc(" +
-      clamped +
-      "% + 5px), transparent 100%)";
-    beforeLabel.style.webkitMaskImage = beforeLabelMask;
-    beforeLabel.style.maskImage = beforeLabelMask;
-
     divider.style.left = clamped + "%";
     handle.style.left = clamped + "%";
     handle.setAttribute("aria-valuenow", Math.round(clamped));
