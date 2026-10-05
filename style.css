@@ -843,9 +843,6 @@ section {
 
 .outcomes-gallery figure {
   margin: 0;
-}
-
-.outcome-photo {
   aspect-ratio: 1 / 1;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -864,14 +861,6 @@ section {
   transform: scale(1.06);
 }
 
-.outcomes-gallery figcaption {
-  margin-top: 12px;
-  font-size: 0.88rem;
-  line-height: 1.4;
-  color: var(--ink-soft);
-  text-align: center;
-}
-
 .outcomes-note {
   text-align: center;
   margin-top: 32px;
@@ -888,10 +877,6 @@ section {
   .outcomes-gallery {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-  }
-  .outcomes-gallery figcaption {
-    margin-top: 8px;
-    font-size: 0.78rem;
   }
   .outcomes-note {
     margin-top: 24px;
