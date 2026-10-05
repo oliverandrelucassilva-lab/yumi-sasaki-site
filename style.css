@@ -389,7 +389,7 @@ p {
     padding-block: 56px 84px;
   }
   .hero-float-card {
-    right: calc(2% + 159px);
+    right: calc(2% + 153px);
     bottom: 90px;
   }
 }
@@ -402,7 +402,7 @@ p {
     max-width: 400px;
   }
   .hero-float-card {
-    right: calc(2% + 85px);
+    right: calc(2% + 80px);
   }
 }
 
@@ -415,7 +415,7 @@ p {
 .hero-float-card {
   position: absolute;
   z-index: 2;
-  right: calc(2% + 270px);
+  right: calc(2% + 261px);
   bottom: 110px;
   max-width: 260px;
   background: rgba(255, 255, 255, 0.96);
