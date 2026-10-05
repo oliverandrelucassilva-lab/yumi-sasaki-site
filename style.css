@@ -833,6 +833,10 @@ section {
 
 /* ----------------------------------- resultados ----------------------------------- */
 
+#resultados .section-head p {
+  font-size: 1.1rem;
+}
+
 .outcomes-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -864,6 +868,7 @@ section {
 .outcomes-note {
   text-align: center;
   margin-top: 32px;
+  font-size: 1.05rem;
   color: var(--ink-soft);
 }
 
@@ -875,12 +880,12 @@ section {
 
 @media (max-width: 640px) {
   .outcomes-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
   }
   .outcomes-note {
     margin-top: 24px;
-    font-size: 0.92rem;
+    font-size: 1rem;
   }
 }
 
