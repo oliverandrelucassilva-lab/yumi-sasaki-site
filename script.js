@@ -101,7 +101,7 @@
   if (reduceMotion || !("IntersectionObserver" in window)) return;
 
   var targets = document.querySelectorAll(
-    ".section-head, .specialty-card, .about-body, .clinic-body, .location-card, .results-gallery figure"
+    ".section-head, .specialty-card, .about-body, .clinic-body, .location-card, .results-gallery figure, .outcomes-gallery figure"
   );
   if (!targets.length) return;
 

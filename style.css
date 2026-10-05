@@ -518,6 +518,9 @@ p {
 .results-gallery figure:nth-child(2) { transition-delay: 0.08s; }
 .results-gallery figure:nth-child(3) { transition-delay: 0.16s; }
 
+.outcomes-gallery figure:nth-child(2) { transition-delay: 0.08s; }
+.outcomes-gallery figure:nth-child(3) { transition-delay: 0.16s; }
+
 /* ----------------------------------- sections ----------------------------------- */
 
 section {
@@ -825,6 +828,59 @@ section {
   }
   .digital-flow-body p {
     margin-top: 10px;
+  }
+}
+
+/* ----------------------------------- resultados ----------------------------------- */
+
+.outcomes-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.outcomes-gallery figure {
+  margin: 0;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+}
+
+.outcomes-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.outcomes-gallery figure:hover img {
+  transform: scale(1.06);
+}
+
+.outcomes-note {
+  text-align: center;
+  margin-top: 32px;
+  color: var(--ink-soft);
+}
+
+.outcomes-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+@media (max-width: 640px) {
+  .outcomes-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .outcomes-note {
+    margin-top: 24px;
+    font-size: 0.92rem;
   }
 }
 
